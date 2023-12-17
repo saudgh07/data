@@ -2,7 +2,21 @@ import streamlit as st
 import pandas as pd
 
 st.title("Excel Update App")
-df = pd.read_csv("data/names.csv")
+@st.cache_data
+def get_data_from_excel():
+    df = pd.read_excel(
+        io="supermarkt_sales.xlsx",
+        engine="openpyxl",
+        sheet_name="Sales",
+        skiprows=3,
+        usecols="B:R",
+        nrows=1000,
+    )
+    # Add 'hour' column to dataframe
+    df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
+    return df
+
+df = get_data_from_excel()
 st.header ("Existing File")
 st.write(df)
 st. sidebar.header ("Options")
