@@ -2,15 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.title("Excel Update App")
-def get_data_from_excel():
-    df = pd.read_excel(
-        io="names.xlsx",
-        engine="openpyxl",
-        sheet_name="Names",
-        skiprows=3,
-        usecols="B:R",
-        nrows=1000,
-    )
+df = pd.read_csv("data/names.csv")
 st.header ("Existing File")
 st.write(df)
 st. sidebar.header ("Options")
