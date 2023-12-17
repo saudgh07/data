@@ -5,9 +5,9 @@ st.title("Excel Update App")
 @st.cache_data
 def get_data_from_excel():
     df = pd.read_excel(
-        io="supermarkt_sales.xlsx",
+        io="names.xlsx",
         engine="openpyxl",
-        sheet_name="Sales",
+        sheet_name="Names",
         skiprows=3,
         usecols="B:R",
         nrows=1000,
