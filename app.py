@@ -1,4 +1,4 @@
 import streamlit as st
-import pandas as pa
+import pandas as pd
 
 st.title("Excel Update App")
