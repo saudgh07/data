@@ -16,6 +16,5 @@ add_data = options_form.form_submit_button()
 if add_data:
   new_data = {"name": user_name, "age": int(user_age)}
   df = df.append(new_data, ignore_index=True)
-  st.header("New File")
-  st.write(df)
+  df.to_csv("names.csv", index=False)
   
