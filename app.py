@@ -7,8 +7,7 @@ df = pd.read_csv("names.csv")
 st.header("Random Data")
 st.write(df)
 
-
-st.sidebar.header ("Options")
+st.sidebar.header("Options")
 options_form = st.sidebar.form("options_form")
 user_name = options_form.text_input("Name")
 user_age = options_form.text_input("Age")
