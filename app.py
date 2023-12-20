@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.title("Excel Update App")
-df = pd.read_csv("data/names.csv")
+df = pd.read_csv("names.csv")
 st.header ("Existing File")
 st.write(df)
 st. sidebar.header ("Options")
@@ -14,4 +14,4 @@ add_data = options_form.form_submit_button()
 if add_data:
   new_data = {"name": user_name,"age": int(user_age)}
   df = df.append(new_data, ignore_index=True)
-  df.to_csv("data/names.csv", index-False)
+  df.to_csv("names.csv", index-False)
