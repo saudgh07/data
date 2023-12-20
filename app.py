@@ -15,5 +15,5 @@ user_age = options_form.text_input("Age")
 add_data = options_form.form_submit_button()
 if add_data:
   new_data = {"name": user_name, "age": int(user_age)}
-  df = df.append(new_data, ignore_index=False)
+  df = df.append(new_data, ignore_index=True)
   df.to_csv("names.csv", index=False)
