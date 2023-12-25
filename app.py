@@ -15,5 +15,6 @@ add_data = options_form.form_submit_button()
 if add_data:
     new_data = {"name": user_name, "age": int(user_age)}
     new_row = pd.DataFrame([new_data])
-    df = df.append(new_row, ignore_index=True)
+    df = pd.concat([df, new_row], ignore_index=True)
     df.to_csv("names.csv", index=False)
+
